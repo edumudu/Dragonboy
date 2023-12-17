@@ -164,13 +164,12 @@ namespace QLTK
                         break;
                     case DevelopStatus.Developing:
                         new Thread(() =>
-                        MessageBoxNative(Process.GetCurrentProcess().MainWindowHandle, "Nếu bạn có ý tưởng hay chức năng mới, đừng ngại ngần mà hãy đóng góp cho Mod Cộng Đồng!", "Thông báo", 0x00000040 | 0x00040000)
-                        ).Start();
+                        MessageBoxNative(Process.GetCurrentProcess().MainWindowHandle, LangHelper.GetString("ModComunityInvite"), LangHelper.GetString("Notification"), 0x00000040 | 0x00040000)).Start();
                         break;
                     case DevelopStatus.OldVersion:
                         new Thread(() =>
                         {
-                            if (MessageBoxNative(Process.GetCurrentProcess().MainWindowHandle, $"Đã có phiên bản mới!{Environment.NewLine}Bạn có muốn cập nhật không?", "Cập nhật", 0x00000004 | 0x00000040 | 0x00040000) == 6)
+                            if (MessageBoxNative(Process.GetCurrentProcess().MainWindowHandle, string.Format(LangHelper.GetString("NewVersionAvailable"), Environment.NewLine), LangHelper.GetString("Update"), 0x00000004 | 0x00000040 | 0x00040000) == 6)
                                 Process.Start("https://github.com/pk9r327/Dragonboy");
                         }).Start();
                         break;
@@ -179,11 +178,11 @@ namespace QLTK
             }
             catch (WebException ex)
             {
-                MessageBox.Show("Không thể kết nối đến máy chủ!" + Environment.NewLine + ex, "Lỗi", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show(LangHelper.GetString("CannotConnectServer") + Environment.NewLine + ex, LangHelper.GetString("Error"), MessageBoxButton.OK, MessageBoxImage.Error);
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Có lỗi xảy ra:" + Environment.NewLine + ex, "Lỗi", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show(LangHelper.GetString("AnErrorOccurred") + Environment.NewLine + ex, LangHelper.GetString("Error"), MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
@@ -219,22 +218,27 @@ namespace QLTK
             }
             catch (WebException ex)
             {
-                MessageBox.Show("Không thể kết nối đến máy chủ!" + Environment.NewLine + ex, "Lỗi", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show(LangHelper.GetString("CannotConnectServer") + Environment.NewLine + ex, LangHelper.GetString("Error"), MessageBoxButton.OK, MessageBoxImage.Error);
                 return DevelopStatus.NormalUser;
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Có lỗi xảy ra:" + Environment.NewLine + ex, "Lỗi", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show(LangHelper.GetString("AnErrorOccurred") + Environment.NewLine + ex, LangHelper.GetString("Error"), MessageBoxButton.OK, MessageBoxImage.Error);
                 return DevelopStatus.NormalUser;
             }
             return DevelopStatus.None;
         }
 
-        internal static void SetPresence(string state = "Chưa đăng nhập", string details = "", Timestamps timeStamps = null)
+        internal static void SetPresence(string details = "", Timestamps timeStamps = null)
+        {
+            SetPresence(LangHelper.GetString("NotLoggedYet"), details, timeStamps);
+        }
+
+        internal static void SetPresence(string state, string details = "", Timestamps timeStamps = null)
         {
             if (Program.isDiscordRichPresenceDisabled)
                 return;
-            string name = "Mod Cộng Đồng";
+            string name = LangHelper.GetString("ModName");
             RichPresence richPresence = new RichPresence()
             {
                 State = state,
@@ -251,7 +255,7 @@ namespace QLTK
             if (currentDevelopStatus == DevelopStatus.Developing)
             {
                 richPresence.Assets.SmallImageKey = "icon_developing";
-                richPresence.Assets.SmallImageText = "Đang phát triển";
+                richPresence.Assets.SmallImageText = LangHelper.GetString("Developing");
             }
             Program.discordClient.SetPresence(richPresence);
         }
@@ -265,10 +269,10 @@ namespace QLTK
                 case DevelopStatus.NormalUser:
                     break;
                 case DevelopStatus.Developing:
-                    name += " [Chế độ phát triển]";
+                    name += $" [{LangHelper.GetString("DevelopingMode")}]";
                     break;
                 case DevelopStatus.OldVersion:
-                    name += " [Phiên bản cũ]";
+                    name += $" [{LangHelper.GetString("OldVersion")}]";
                     break;
             }
             return name;

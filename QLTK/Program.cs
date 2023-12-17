@@ -22,6 +22,7 @@ namespace QLTK
         static void Main(string[] args)
         {
             AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
+
             if (mutex.WaitOne(TimeSpan.Zero, true))
             {
                 if (args.Any(s => s == "--disable-discord-rich-presence"))
@@ -47,7 +48,7 @@ namespace QLTK
         {
             if (!isDiscordRichPresenceDisabled)
                 discordClient?.Dispose();
-            MessageBox.Show(Application.Current.MainWindow, $"Có lỗi xảy ra:{Environment.NewLine}{e.ExceptionObject}", "QLTK", MessageBoxButton.OK, MessageBoxImage.Error);
+            MessageBox.Show(Application.Current.MainWindow, $"{LangHelper.GetString("AnErrorOccurred")}{Environment.NewLine}{e.ExceptionObject}", "QLTK", MessageBoxButton.OK, MessageBoxImage.Error);
         }
 
         static void Initialize()

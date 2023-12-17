@@ -16,6 +16,8 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using System.Resources;
+using System.Globalization;
 
 namespace QLTK
 {
@@ -246,14 +248,14 @@ namespace QLTK
         {
             if (!this.UpdateSizeData())
             {
-                MessageBox.Show("Kích thước cửa sổ không hợp lệ");
+                MessageBox.Show(LangHelper.GetString("InvalidWindowSize"));
                 return;
             }
 
             var accounts = this.GetSelectedAccounts();
             if (accounts.Count() == 0)
             {
-                MessageBox.Show("Vui lòng chọn tài khoản");
+                MessageBox.Show(LangHelper.GetString("SelectAccount"));
                 return;
             }
 
@@ -266,7 +268,7 @@ namespace QLTK
         {
             if (!this.UpdateSizeData())
             {
-                MessageBox.Show("Kích thước cửa sổ không hợp lệ");
+                MessageBox.Show(LangHelper.GetString("InvalidWindowSize"));
                 return;
             }
 
@@ -289,7 +291,7 @@ namespace QLTK
         {
             if (account.process == null || account.process.HasExited)
             {
-                account.status = "Đang khởi động...";
+                account.status = LangHelper.GetString("StartingUp");
                 this.AccountsDataGrid.Items.Refresh();
 
                 AsynchronousSocketListener.waitingAccounts.Add(account);
@@ -596,7 +598,7 @@ namespace QLTK
 
                 if (!this.UpdateSizeData())
                 {
-                    MessageBox.Show("Kích thước cửa sổ không hợp lệ");
+                    MessageBox.Show(LangHelper.GetString("InvalidWindowSize"));
                     this.MainGrid.IsEnabled = true;
                     return;
                 }
@@ -628,7 +630,7 @@ namespace QLTK
             var account = this.GetSelectedAccount();
             if (account == null)
             {
-                MessageBox.Show("Vui lòng chọn tài khoản");
+                MessageBox.Show(LangHelper.GetString("SelectAccount"));
                 return;
             }
 
