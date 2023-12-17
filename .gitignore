@@ -26,6 +26,7 @@ x86/
 [Ww][Ii][Nn]32/
 [Aa][Rr][Mm]/
 [Aa][Rr][Mm]64/
+build/
 bld/
 [Bb]in/
 [Oo]bj/
@@ -373,3 +374,10 @@ Game/ModData/hotkeyCommands.json
 Game/ModData/settings.json
 Game/ModData/log.txt
 Game/ModData/Servers.txt
+
+Game/QLTK.exe
+
+# Locales
+Game/vi/*.dll
+
+HashAndTimeStamp.txt
