@@ -306,15 +306,17 @@ namespace QLTK
 
                 var hWnd = account.process.MainWindowHandle;
                 Utilities.SetWindowText(hWnd, account.username);
-                if (!FullScreenCheckBox.IsChecked.Value)
-                {
-                    Utilities.GetWindowRect(hWnd, out RECT rect);
-                    Utilities.MoveWindow(
-                        hWnd, x: rect.left - rect.right, y: 0,
-                        width: rect.right - rect.left,
-                        height: rect.bottom - rect.top,
-                        bRepaint: true);
-                }
+
+                // TODO: Uncoment when discovery purpurse and fix the bug of windows beging moved out of the screen
+                // if (!FullScreenCheckBox.IsChecked.Value)
+                // {
+                //     Utilities.GetWindowRect(hWnd, out RECT rect);
+                //     Utilities.MoveWindow(
+                //         hWnd, x: rect.left - rect.right, y: 0,
+                //         width: rect.right - rect.left,
+                //         height: rect.bottom - rect.top,
+                //         bRepaint: true);
+                // }
             }
         }
         #endregion
