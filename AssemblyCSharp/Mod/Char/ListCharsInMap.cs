@@ -18,7 +18,7 @@ namespace Mod
         public static int x = 15 - 9;
         public static int y = 0;
 
-        public static readonly int MAX_CHAR = 6;
+        static readonly int MAX_CHAR = 6;
 
         public static int distanceBetweenLines = 8;
 

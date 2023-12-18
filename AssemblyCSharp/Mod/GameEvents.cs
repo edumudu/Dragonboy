@@ -426,7 +426,6 @@ namespace Mod
         {
             CharEffect.Paint(g);
             SuicideRange.paint(g);
-            //KillCounter.getInstance().Paint(g);
             UIReportersManager.handlePaintGameScr(g);
 
             //string str = "";
