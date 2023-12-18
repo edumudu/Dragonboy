@@ -70,7 +70,6 @@ namespace Mod
 
             UIReportersManager.AddReporter(Boss.Paint);
             UIReportersManager.AddReporter(ListCharsInMap.Paint);
-            UIReportersManager.AddReporter(KillCounter.Paint);
         }
 
         /// <summary>
@@ -89,6 +88,7 @@ namespace Mod
             SetDo.SaveData();
             ExtensionManager.Invoke();
             UIReportersManager.ClearReporters();
+
             return false;
         }
 
