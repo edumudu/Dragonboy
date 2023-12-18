@@ -8,6 +8,7 @@ using Mod.ModMenu;
 using Mod.PickMob;
 using Mod.Set;
 using Mod.Xmap;
+using Mod.Counter;
 using System;
 using System.Collections;
 using System.IO;
@@ -281,6 +282,7 @@ namespace Mod
             if (ChatTextField.gI().strChat.Replace(" ", "") != "Chat" || ChatTextField.gI().tfChat.name != "chat") return;
             HistoryChat.gI.update();
             ExtensionManager.Invoke();
+            KillCounter.getInstance().handleGameScrUpdate();
         }
 
         /// <summary>
@@ -421,6 +423,7 @@ namespace Mod
             CharEffect.Paint(g);
             SuicideRange.paint(g);
             Boss.Paint(g);
+            KillCounter.getInstance().Paint(g);
 
             //string str = "";
             //for (int i = 0; i < 4; i++)
@@ -535,6 +538,7 @@ namespace Mod
         {
             Pk9rPickMob.MobStartDie(instance);
             ExtensionManager.Invoke(instance);
+            KillCounter.getInstance().handleMobStartDie(instance);
         }
 
         public static void onUpdateMob(Mob instance)

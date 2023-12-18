@@ -473,6 +473,217 @@
             </summary>
             <param name="isActing">Trạng thái hành động muốn chuyển đổi, nếu null thì sẽ đổi qua lại giữa bật và tắt</param>
         </member>
+        <member name="T:Mod.ModMenu.Locales.Strings">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Mod.ModMenu.Locales.Strings.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Mod.ModMenu.Locales.Strings.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Mod.ModMenu.Locales.Strings.AutoPickUpDescription">
+            <summary>
+              Looks up a localized string similar to Enable/disable automatic item pickup.
+            </summary>
+        </member>
+        <member name="P:Mod.ModMenu.Locales.Strings.AutoPickUpTitle">
+            <summary>
+              Looks up a localized string similar to Automatically pick up items.
+            </summary>
+        </member>
+        <member name="P:Mod.ModMenu.Locales.Strings.AutoUpSSDescription">
+            <summary>
+              Looks up a localized string similar to Auto up newborn acc to mission to state.
+            </summary>
+        </member>
+        <member name="P:Mod.ModMenu.Locales.Strings.AutoUpSSTitle">
+            <summary>
+              Looks up a localized string similar to Auto up newborn.
+            </summary>
+        </member>
+        <member name="P:Mod.ModMenu.Locales.Strings.AvoidSMDescription">
+            <summary>
+              Looks up a localized string similar to Automatically avoid super monsters when slaughtering.
+            </summary>
+        </member>
+        <member name="P:Mod.ModMenu.Locales.Strings.AvoidSMTitle">
+            <summary>
+              Looks up a localized string similar to Avoid super monsters when slaughtering.
+            </summary>
+        </member>
+        <member name="P:Mod.ModMenu.Locales.Strings.BoolToggleStatusMsgTemplate">
+            <summary>
+              Looks up a localized string similar to {0} {1}!.
+            </summary>
+        </member>
+        <member name="P:Mod.ModMenu.Locales.Strings.BossListDescription">
+            <summary>
+              Looks up a localized string similar to Enable/disable boss notification display.
+            </summary>
+        </member>
+        <member name="P:Mod.ModMenu.Locales.Strings.BossListTitle">
+            <summary>
+              Looks up a localized string similar to Boss announcement.
+            </summary>
+        </member>
+        <member name="P:Mod.ModMenu.Locales.Strings.CharInfoDescription">
+            <summary>
+              Looks up a localized string similar to Shows approximately the exact time of NRD, shield, monkey, whistle... of the character in focus.
+            </summary>
+        </member>
+        <member name="P:Mod.ModMenu.Locales.Strings.CharInfoTitle">
+            <summary>
+              Looks up a localized string similar to Show character information.
+            </summary>
+        </member>
+        <member name="P:Mod.ModMenu.Locales.Strings.CharListDcpDescription">
+            <summary>
+              Looks up a localized string similar to Show disciples in the list of characters in the map (disciples without a master in the map are not displayed).
+            </summary>
+        </member>
+        <member name="P:Mod.ModMenu.Locales.Strings.CharListDcpTitle">
+            <summary>
+              Looks up a localized string similar to Show disciples in the list.
+            </summary>
+        </member>
+        <member name="P:Mod.ModMenu.Locales.Strings.CharListDescription">
+            <summary>
+              Looks up a localized string similar to Show a list of characters in the map.
+            </summary>
+        </member>
+        <member name="P:Mod.ModMenu.Locales.Strings.CharListTitle">
+            <summary>
+              Looks up a localized string similar to Show character list.
+            </summary>
+        </member>
+        <member name="P:Mod.ModMenu.Locales.Strings.CrossInMassacreDescription">
+            <summary>
+              Looks up a localized string similar to Enable/disable automatic terrain traversal while slaughtering.
+            </summary>
+        </member>
+        <member name="P:Mod.ModMenu.Locales.Strings.CrossInMassacreTitle">
+            <summary>
+              Looks up a localized string similar to Cross the terrain while slaughtering.
+            </summary>
+        </member>
+        <member name="P:Mod.ModMenu.Locales.Strings.CustomBgDescription">
+            <summary>
+              Looks up a localized string similar to Replace game background with custom background (automatically adjusts background to fit screen size).
+            </summary>
+        </member>
+        <member name="P:Mod.ModMenu.Locales.Strings.CustomBgTitle">
+            <summary>
+              Looks up a localized string similar to Custom background.
+            </summary>
+        </member>
+        <member name="P:Mod.ModMenu.Locales.Strings.CustomCursorDescription">
+            <summary>
+              Looks up a localized string similar to Change the default mouse pointer to a custom mouse pointer.
+            </summary>
+        </member>
+        <member name="P:Mod.ModMenu.Locales.Strings.CustomCursorTitle">
+            <summary>
+              Looks up a localized string similar to Custom cursors.
+            </summary>
+        </member>
+        <member name="P:Mod.ModMenu.Locales.Strings.CustomLogoDescription">
+            <summary>
+              Looks up a localized string similar to Enable/disable display of custom logo on game screen.
+            </summary>
+        </member>
+        <member name="P:Mod.ModMenu.Locales.Strings.CustomLogoTitle">
+            <summary>
+              Looks up a localized string similar to Custom logos.
+            </summary>
+        </member>
+        <member name="P:Mod.ModMenu.Locales.Strings.Disabled">
+            <summary>
+              Looks up a localized string similar to Disabled.
+            </summary>
+        </member>
+        <member name="P:Mod.ModMenu.Locales.Strings.Enabled">
+            <summary>
+              Looks up a localized string similar to Enabled.
+            </summary>
+        </member>
+        <member name="P:Mod.ModMenu.Locales.Strings.KillCountDescription">
+            <summary>
+              Looks up a localized string similar to Enable mob kills counting.
+            </summary>
+        </member>
+        <member name="P:Mod.ModMenu.Locales.Strings.KillCountTitle">
+            <summary>
+              Looks up a localized string similar to Count mob kills.
+            </summary>
+        </member>
+        <member name="P:Mod.ModMenu.Locales.Strings.MassacreDescription">
+            <summary>
+              Looks up a localized string similar to Enable/disable automatic monster attack.
+            </summary>
+        </member>
+        <member name="P:Mod.ModMenu.Locales.Strings.MassacreTitle">
+            <summary>
+              Looks up a localized string similar to Massacre.
+            </summary>
+        </member>
+        <member name="P:Mod.ModMenu.Locales.Strings.PickUpLimitDescription">
+            <summary>
+              Looks up a localized string similar to Enable/disable the limit on the number of times an item can be automatically picked up.
+            </summary>
+        </member>
+        <member name="P:Mod.ModMenu.Locales.Strings.PickUpLimitTitle">
+            <summary>
+              Looks up a localized string similar to Limit the number of pickups.
+            </summary>
+        </member>
+        <member name="P:Mod.ModMenu.Locales.Strings.SelfAttackDescription">
+            <summary>
+              Looks up a localized string similar to Turn on/off automatic attack.
+            </summary>
+        </member>
+        <member name="P:Mod.ModMenu.Locales.Strings.SelfAttackTitle">
+            <summary>
+              Looks up a localized string similar to Self-attack.
+            </summary>
+        </member>
+        <member name="P:Mod.ModMenu.Locales.Strings.ShowBomDistanceDescription">
+            <summary>
+              Looks up a localized string similar to Displays people, monsters, bosses... within bomb range.
+            </summary>
+        </member>
+        <member name="P:Mod.ModMenu.Locales.Strings.ShowBomDistanceTitle">
+            <summary>
+              Looks up a localized string similar to Show bomb distance.
+            </summary>
+        </member>
+        <member name="P:Mod.ModMenu.Locales.Strings.SkiptNotOwnedPickUpDescription">
+            <summary>
+              Looks up a localized string similar to Enable/disable filtering to not pick up other people&apos;s items.
+            </summary>
+        </member>
+        <member name="P:Mod.ModMenu.Locales.Strings.SkiptNotOwnedPickUpTitle">
+            <summary>
+              Looks up a localized string similar to Don&apos;t pick up other people&apos;s things.
+            </summary>
+        </member>
+        <member name="P:Mod.ModMenu.Locales.Strings.VSyncDescription">
+            <summary>
+              Looks up a localized string similar to Turn off Vsync if you want to adjust FPS!.
+            </summary>
+        </member>
+        <member name="P:Mod.ModMenu.Locales.Strings.VSyncTitle">
+            <summary>
+              Looks up a localized string similar to VSync.
+            </summary>
+        </member>
         <member name="M:Mod.ModMenu.ModMenuItem.#ctor(System.String,System.String,System.Boolean,System.String)">
             <summary>
             Constructor
@@ -619,6 +830,32 @@
             Lấy hệ của đệ tử bằng cách kiểm tra skill 1
             </summary>
             <returns></returns>
+        </member>
+        <member name="T:Mod.Xmap.Locales.Strings">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Mod.Xmap.Locales.Strings.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Mod.Xmap.Locales.Strings.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Mod.Xmap.Locales.Strings.CurrentMap">
+            <summary>
+              Looks up a localized string similar to Current map: .
+            </summary>
+        </member>
+        <member name="P:Mod.Xmap.Locales.Strings.SelectDestination">
+            <summary>
+              Looks up a localized string similar to Please select where you want to go.
+            </summary>
         </member>
         <member name="F:Panel.tabName">
             <summary>

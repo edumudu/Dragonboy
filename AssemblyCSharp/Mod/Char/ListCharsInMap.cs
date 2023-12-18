@@ -15,17 +15,17 @@ namespace Mod
 
         static int maxLength = 0;
 
-        static int x = 15 - 9;
+        public static int x = 15 - 9;
 
-        static int y = 60;
+        public static int y = 60;
 
-        static readonly int MAX_CHAR = 6;
+        public static readonly int MAX_CHAR = 6;
 
-        static int distanceBetweenLines = 8;
+        public static int distanceBetweenLines = 8;
 
         static int offset = 0;
 
-        static bool isCollapsed;
+        public static bool isCollapsed;
 
         static int titleWidth;
 
