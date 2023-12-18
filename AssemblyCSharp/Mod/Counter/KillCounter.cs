@@ -19,12 +19,6 @@ namespace Mod.Counter
         public static int y = 0;
         public static int distanceBetweenLines = 8;
 
-        public void handleGameScrUpdate()
-        {
-            y = GetNewY(Boss.isEnabled, Boss.isCollapsed, Boss.listBosses.Count, Boss.distanceBetweenLines, Boss.MAX_BOSS_DISPLAY, Boss.y);
-            y = GetNewY(ListCharsInMap.isEnabled, ListCharsInMap.isCollapsed, ListCharsInMap.listChars.Count, ListCharsInMap.distanceBetweenLines, ListCharsInMap.MAX_CHAR, ListCharsInMap.y);
-        }
-
         public void handleMobStartDie(Mob mob)
         {
             if (mob.status == 1 || mob.status == 0 || !isEnabled) return;
@@ -87,22 +81,6 @@ namespace Mod.Counter
             g.drawString($"Kill Count: {killCount}", -(x + offsetX) + scrollBarWidth, y - distanceBetweenLines - 2, style);
 
             return distanceBetweenLines;
-        }
-
-        private static int GetNewY(bool isEnabled, bool isCollapsed, int count, int distanceBetweenLines, int maxDisplayCount, int baseY)
-        {
-            if (!isEnabled) return y;
-
-            int _y = y;
-            int uncollapsedExpectedY = baseY + 5 + distanceBetweenLines * Mathf.Clamp(count, 0, maxDisplayCount) + 10;
-            int collapsedExpectedY = baseY + distanceBetweenLines + 3;
-
-            if (isCollapsed)
-                _y = _y != collapsedExpectedY ? collapsedExpectedY : _y;
-            else if (_y != uncollapsedExpectedY)
-                _y = uncollapsedExpectedY;
-
-            return _y;
         }
     }
 }

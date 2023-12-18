@@ -287,7 +287,6 @@ namespace Mod
             if (ChatTextField.gI().strChat.Replace(" ", "") != "Chat" || ChatTextField.gI().tfChat.name != "chat") return;
             HistoryChat.gI.update();
             ExtensionManager.Invoke();
-            // KillCounter.getInstance().handleGameScrUpdate();
         }
 
         /// <summary>
