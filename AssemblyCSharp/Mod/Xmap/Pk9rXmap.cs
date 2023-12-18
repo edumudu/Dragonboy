@@ -2,6 +2,7 @@
 using Mod.ModHelper.CommandMod.Hotkey;
 using Mod.ModHelper.Menu;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Mod.Xmap
 {
@@ -40,8 +41,14 @@ namespace Mod.Xmap
 
             XmapData.loadGroupMapsFromFile("TextData\\GroupMapsXmap.txt");
 
+            string[] popupText = [
+                "XmapNRO by Phucprotein",
+                $"{LangHelper.GetString("CurrentMap")} {TileMap.mapName}, ID: {TileMap.mapID}",
+                LangHelper.GetString("SelectDestination")
+            ];
+
             new MenuBuilder()
-                .setChatPopup($"XmapNRO by Phucprotein\nMap hiện tại: {TileMap.mapName}, ID: {TileMap.mapID}\nVui lòng chọn nơi muốn đến")
+                .setChatPopup(string.Join("\n", popupText))
                 .map(XmapData.groups, groupMap =>
                 {
                     return new(groupMap.nameGroup, new(() =>
