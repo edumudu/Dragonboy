@@ -67,6 +67,10 @@ namespace Mod
             System.Windows.Forms.Application.EnableVisualStyles();
             System.Windows.Forms.Application.SetCompatibleTextRenderingDefault(false);
             ExtensionManager.Invoke();
+
+            UIReportersManager.AddReporter(Boss.Paint);
+            UIReportersManager.AddReporter(ListCharsInMap.Paint);
+            UIReportersManager.AddReporter(KillCounter.Paint);
         }
 
         /// <summary>
@@ -84,6 +88,7 @@ namespace Mod
             CustomCursor.SaveData();
             SetDo.SaveData();
             ExtensionManager.Invoke();
+            UIReportersManager.ClearReporters();
             return false;
         }
 
@@ -282,7 +287,7 @@ namespace Mod
             if (ChatTextField.gI().strChat.Replace(" ", "") != "Chat" || ChatTextField.gI().tfChat.name != "chat") return;
             HistoryChat.gI.update();
             ExtensionManager.Invoke();
-            KillCounter.getInstance().handleGameScrUpdate();
+            // KillCounter.getInstance().handleGameScrUpdate();
         }
 
         /// <summary>
@@ -419,11 +424,10 @@ namespace Mod
 
         public static void onPaintGameScr(mGraphics g)
         {
-            ListCharsInMap.paint(g);
             CharEffect.Paint(g);
             SuicideRange.paint(g);
-            Boss.Paint(g);
-            KillCounter.getInstance().Paint(g);
+            //KillCounter.getInstance().Paint(g);
+            UIReportersManager.handlePaintGameScr(g);
 
             //string str = "";
             //for (int i = 0; i < 4; i++)

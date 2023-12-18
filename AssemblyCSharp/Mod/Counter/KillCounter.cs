@@ -16,7 +16,7 @@ namespace Mod.Counter
         private static bool isEnabled = false;
 
         public static int x = 15 - 9;
-        public static int y = 60;
+        public static int y = 0;
         public static int distanceBetweenLines = 8;
 
         public void handleGameScrUpdate()
@@ -56,10 +56,11 @@ namespace Mod.Counter
             if (!state) resetCounter();
         }
 
-        public void Paint(mGraphics g)
+        public static int Paint(int _y, mGraphics g)
         {
-            if (!isEnabled) return;
+            if (!isEnabled) return 0;
 
+            y = _y;
             int titleWidth = 0;
             int scrollBarWidth = 0;
             int offsetX = scrollBarWidth;
@@ -84,6 +85,8 @@ namespace Mod.Counter
             }
 
             g.drawString($"Kill Count: {killCount}", -(x + offsetX) + scrollBarWidth, y - distanceBetweenLines - 2, style);
+
+            return distanceBetweenLines;
         }
 
         private static int GetNewY(bool isEnabled, bool isCollapsed, int count, int distanceBetweenLines, int maxDisplayCount, int baseY)
