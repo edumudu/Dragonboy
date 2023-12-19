@@ -70,6 +70,7 @@ namespace Mod
 
             UIReportersManager.AddReporter(Boss.Paint);
             UIReportersManager.AddReporter(ListCharsInMap.Paint);
+            UIReportersManager.AddReporter(KillCounter.Paint);
         }
 
         /// <summary>
