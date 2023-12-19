@@ -6,13 +6,20 @@ using System.Text;
 
 namespace Mod.PickMob
 {
+
+
+    struct Ability
+    {
+        public const short PowerRescue = 62;
+    }
+
     public class PickMobController
     {
         private const int TIME_REPICKITEM = 500;
         private const int TIME_DELAY_TANSAT = 500;
         private const int ID_ICON_ITEM_TDLT = 4387;
         private static readonly sbyte[] IdSkillsMelee = { 0, 9, 2, 17, 4 };
-        private static readonly sbyte[] IdSkillsCanNotAttack = 
+        private static readonly sbyte[] IdSkillsCanNotAttack =
             { 10, 11, 14, 23, 7 };
 
         private static readonly PickMobController _Instance = new PickMobController();
@@ -105,7 +112,7 @@ namespace Mod.PickMob
 
             if (Pk9rPickMob.IsTanSat)
             {
-                if (myChar.isCharge)
+                if (myChar.isCharge && myChar.cHP < myChar.cHPFull)
                 {
                     Wait(TIME_DELAY_TANSAT);
                     return;
@@ -121,7 +128,7 @@ namespace Mod.PickMob
                         myChar.cx = myChar.mobFocus.xFirst - 24;
                         myChar.cy = myChar.mobFocus.yFirst;
                         Service.gI().charMove();
-                    }    
+                    }
                 }
                 if (myChar.mobFocus != null)
                 {
@@ -134,13 +141,14 @@ namespace Mod.PickMob
                             mobFocus.x = mobFocus.xFirst;
                             mobFocus.y = mobFocus.yFirst;
                             GameScr.gI().doSelectSkill(skill, true);
+
                             if (Res.distance(mobFocus.xFirst, mobFocus.yFirst, myChar.cx, myChar.cy) <= 48)
                             {
                                 Utilities.DoDoubleClickToObj(mobFocus);
                             }
                             else
                             {
-                                Move(mobFocus.xFirst , mobFocus.yFirst);
+                                Move(mobFocus.xFirst, mobFocus.yFirst);
                             }
                         }
                     }
@@ -170,7 +178,7 @@ namespace Mod.PickMob
             {
                 vs[0] = x;
                 vs[1] = y;
-            }    
+            }
             myChar.currentMovePoint = new MovePoint(vs[0], vs[1]);
         }
 
@@ -400,8 +408,8 @@ namespace Mod.PickMob
                     {
                         dmin = d;
                         ysdBest = i;
-                    }    
-                }    
+                    }
+                }
             }
             return ysdBest;
         }
