@@ -222,6 +222,9 @@
   <data name="Quit" xml:space="preserve">
     <value>Quit</value>
   </data>
+  <data name="Race" xml:space="preserve">
+    <value>Hệ</value>
+  </data>
   <data name="Resolution" xml:space="preserve">
     <value>Kích thước</value>
   </data>

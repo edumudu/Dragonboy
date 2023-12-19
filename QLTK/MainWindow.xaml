@@ -40,7 +40,8 @@
             </TextBlock>
 
             <TextBlock Grid.Column="1" Margin="5">
-              <Run Text="Hệ: " />
+              <Run Text="{x:Static rs:Strings.Race}"  />
+              <Run Text=": " />
               <Run Text="{Binding planet, Mode=OneWay}" />
             </TextBlock>
           </Grid>

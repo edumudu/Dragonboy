@@ -376,6 +376,15 @@ namespace QLTK.Locales.UI {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Race.
+        /// </summary>
+        public static string Race {
+            get {
+                return ResourceManager.GetString("Race", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Resolution.
         /// </summary>
         public static string Resolution {
@@ -435,6 +444,15 @@ namespace QLTK.Locales.UI {
         public static string Status {
             get {
                 return ResourceManager.GetString("Status", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0}: .
+        /// </summary>
+        public static string TemplateWithColon {
+            get {
+                return ResourceManager.GetString("TemplateWithColon", resourceCulture);
             }
         }
         

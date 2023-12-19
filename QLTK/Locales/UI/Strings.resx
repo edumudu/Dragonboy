@@ -222,6 +222,9 @@
   <data name="Quit" xml:space="preserve">
     <value>Quit</value>
   </data>
+  <data name="Race" xml:space="preserve">
+    <value>Race</value>
+  </data>
   <data name="Resolution" xml:space="preserve">
     <value>Resolution</value>
   </data>
@@ -242,6 +245,9 @@
   </data>
   <data name="Status" xml:space="preserve">
     <value>Status</value>
+  </data>
+  <data name="TemplateWithColon" xml:space="preserve">
+    <value>{0}: </value>
   </data>
   <data name="Username" xml:space="preserve">
     <value>Username</value>
