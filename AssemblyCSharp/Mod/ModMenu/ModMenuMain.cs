@@ -32,12 +32,12 @@ namespace Mod.ModMenu
             new ModMenuItemBoolean(LangHelper.GetString("BossListTitle"), LangHelper.GetString("BossListDescription"), Boss.setState, false, "sanboss"),
             new ModMenuItemBoolean(LangHelper.GetString("CustomCursorTitle"), LangHelper.GetString("CustomCursorDescription"), CustomCursor.setState, false, "customcusor"),
 
-            new ModMenuItemBoolean(LangHelper.GetString("MassacreTitle"), LangHelper.GetString("MassacreDescription"), value => Pk9rPickMob.IsTanSat = value, false, "", false, "Bạn đang bật auto T77 hoặc auto up SS!"),
-            new ModMenuItemBoolean(LangHelper.GetString("AvoidSMTitle"), LangHelper.GetString("AvoidSMDescription"), value => Pk9rPickMob.IsNeSieuQuai = value, true, "isnesieuquaits"),
-            new ModMenuItemBoolean(LangHelper.GetString("CrossInMassacreTitle"), LangHelper.GetString("CrossInMassacreDescription"), value => Pk9rPickMob.IsVuotDiaHinh = value, true, "isvuotdiahinh"),
-            new ModMenuItemBoolean(LangHelper.GetString("AutoPickUpTitle"), LangHelper.GetString("AutoPickUpDescription"), value => Pk9rPickMob.IsAutoPickItems = value, true, "isautopick", false, "Bạn đang bật auto T77 hoặc auto up SS!"),
-            new ModMenuItemBoolean(LangHelper.GetString("SkiptNotOwnedPickUpTitle"), LangHelper.GetString("SkiptNotOwnedPickUpDescription"), value => Pk9rPickMob.IsItemMe = value, true, "ispickmyitemonly"),
-            new ModMenuItemBoolean(LangHelper.GetString("PickUpLimitTitle"), LangHelper.GetString("PickUpLimitDescription"), value => Pk9rPickMob.IsLimitTimesPickItem = value, true,"islimitpicktimes"),
+            new ModMenuItemBoolean(LangHelper.GetString("MassacreTitle"), LangHelper.GetString("MassacreDescription"), Pk9rPickMob.SetSlaughter, false, "", false, "Bạn đang bật auto T77 hoặc auto up SS!"),
+            new ModMenuItemBoolean(LangHelper.GetString("AvoidSMTitle"), LangHelper.GetString("AvoidSMDescription"), Pk9rPickMob.SetAvoindSuperMonster, true, "isnesieuquaits"),
+            new ModMenuItemBoolean(LangHelper.GetString("CrossInMassacreTitle"), LangHelper.GetString("CrossInMassacreDescription"), Pk9rPickMob.SetCrossTerrain, true, "isvuotdiahinh"),
+            new ModMenuItemBoolean(LangHelper.GetString("AutoPickUpTitle"), LangHelper.GetString("AutoPickUpDescription"), Pk9rPickMob.SetAutoPickItems, true, "isautopick", false, "Bạn đang bật auto T77 hoặc auto up SS!"),
+            new ModMenuItemBoolean(LangHelper.GetString("SkiptNotOwnedPickUpTitle"), LangHelper.GetString("SkiptNotOwnedPickUpDescription"), Pk9rPickMob.SetAutoPickItemsFromOthers, true, "ispickmyitemonly"),
+            new ModMenuItemBoolean(LangHelper.GetString("PickUpLimitTitle"), LangHelper.GetString("PickUpLimitDescription"), Pk9rPickMob.SetPickUpLimited, true,"islimitpicktimes"),
 
             new ModMenuItemBoolean(LangHelper.GetString("KillCountTitle"), LangHelper.GetString("KillCountDescription"), KillCounter.setEnabledState, false)
         };
