@@ -1,5 +1,6 @@
 ﻿using DiscordRPC;
 using HardwareId;
+using QLTK.Locales;
 using QLTK.Models;
 using QLTK.Properties;
 using System;
@@ -164,12 +165,12 @@ namespace QLTK
                         break;
                     case DevelopStatus.Developing:
                         new Thread(() =>
-                        MessageBoxNative(Process.GetCurrentProcess().MainWindowHandle, LangHelper.GetString("ModComunityInvite"), LangHelper.GetString("Notification"), 0x00000040 | 0x00040000)).Start();
+                        MessageBoxNative(Process.GetCurrentProcess().MainWindowHandle, Strings.ModComunityInvite, Strings.Notification, 0x00000040 | 0x00040000)).Start();
                         break;
                     case DevelopStatus.OldVersion:
                         new Thread(() =>
                         {
-                            if (MessageBoxNative(Process.GetCurrentProcess().MainWindowHandle, string.Format(LangHelper.GetString("NewVersionAvailable"), Environment.NewLine), LangHelper.GetString("Update"), 0x00000004 | 0x00000040 | 0x00040000) == 6)
+                            if (MessageBoxNative(Process.GetCurrentProcess().MainWindowHandle, string.Format(Strings.NewVersionAvailable, Environment.NewLine), Strings.Update, 0x00000004 | 0x00000040 | 0x00040000) == 6)
                                 Process.Start("https://github.com/pk9r327/Dragonboy");
                         }).Start();
                         break;
@@ -178,11 +179,11 @@ namespace QLTK
             }
             catch (WebException ex)
             {
-                MessageBox.Show(LangHelper.GetString("CannotConnectServer") + Environment.NewLine + ex, LangHelper.GetString("Error"), MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show(Strings.CannotConnectServer + Environment.NewLine + ex, Strings.Error, MessageBoxButton.OK, MessageBoxImage.Error);
             }
             catch (Exception ex)
             {
-                MessageBox.Show(LangHelper.GetString("AnErrorOccurred") + Environment.NewLine + ex, LangHelper.GetString("Error"), MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show(Strings.AnErrorOccurred + Environment.NewLine + ex, Strings.Error, MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
@@ -218,12 +219,12 @@ namespace QLTK
             }
             catch (WebException ex)
             {
-                MessageBox.Show(LangHelper.GetString("CannotConnectServer") + Environment.NewLine + ex, LangHelper.GetString("Error"), MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show(Strings.CannotConnectServer + Environment.NewLine + ex, Strings.Error, MessageBoxButton.OK, MessageBoxImage.Error);
                 return DevelopStatus.NormalUser;
             }
             catch (Exception ex)
             {
-                MessageBox.Show(LangHelper.GetString("AnErrorOccurred") + Environment.NewLine + ex, LangHelper.GetString("Error"), MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show(Strings.AnErrorOccurred + Environment.NewLine + ex, Strings.Error, MessageBoxButton.OK, MessageBoxImage.Error);
                 return DevelopStatus.NormalUser;
             }
             return DevelopStatus.None;
@@ -231,14 +232,14 @@ namespace QLTK
 
         internal static void SetPresence(string details = "", Timestamps timeStamps = null)
         {
-            SetPresence(LangHelper.GetString("NotLoggedYet"), details, timeStamps);
+            SetPresence(Strings.NotLoggedYet, details, timeStamps);
         }
 
         internal static void SetPresence(string state, string details = "", Timestamps timeStamps = null)
         {
             if (Program.isDiscordRichPresenceDisabled)
                 return;
-            string name = LangHelper.GetString("ModName");
+            string name = Strings.ModName;
             RichPresence richPresence = new RichPresence()
             {
                 State = state,
@@ -255,7 +256,7 @@ namespace QLTK
             if (currentDevelopStatus == DevelopStatus.Developing)
             {
                 richPresence.Assets.SmallImageKey = "icon_developing";
-                richPresence.Assets.SmallImageText = LangHelper.GetString("Developing");
+                richPresence.Assets.SmallImageText = Strings.Developing;
             }
             Program.discordClient.SetPresence(richPresence);
         }
@@ -269,10 +270,10 @@ namespace QLTK
                 case DevelopStatus.NormalUser:
                     break;
                 case DevelopStatus.Developing:
-                    name += $" [{LangHelper.GetString("DevelopingMode")}]";
+                    name += $" [{Strings.DevelopingMode}]";
                     break;
                 case DevelopStatus.OldVersion:
-                    name += $" [{LangHelper.GetString("OldVersion")}]";
+                    name += $" [{Strings.OldVersion}]";
                     break;
             }
             return name;

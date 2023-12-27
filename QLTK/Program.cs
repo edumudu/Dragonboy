@@ -1,4 +1,5 @@
 ﻿using DiscordRPC;
+using QLTK.Locales;
 using System;
 using System.Diagnostics;
 using System.Linq;
@@ -48,7 +49,7 @@ namespace QLTK
         {
             if (!isDiscordRichPresenceDisabled)
                 discordClient?.Dispose();
-            MessageBox.Show(Application.Current.MainWindow, $"{LangHelper.GetString("AnErrorOccurred")}{Environment.NewLine}{e.ExceptionObject}", "QLTK", MessageBoxButton.OK, MessageBoxImage.Error);
+            MessageBox.Show(Application.Current.MainWindow, $"{Strings.AnErrorOccurred}{Environment.NewLine}{e.ExceptionObject}", "QLTK", MessageBoxButton.OK, MessageBoxImage.Error);
         }
 
         static void Initialize()

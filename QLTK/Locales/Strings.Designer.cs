@@ -160,6 +160,15 @@ namespace QLTK.Locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Old version.
+        /// </summary>
+        public static string OldVersion {
+            get {
+                return ResourceManager.GetString("OldVersion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Please select an account.
         /// </summary>
         public static string SelectAccount {

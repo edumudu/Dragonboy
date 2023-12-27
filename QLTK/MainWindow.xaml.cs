@@ -18,6 +18,7 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Resources;
 using System.Globalization;
+using QLTK.Locales;
 
 namespace QLTK
 {
@@ -42,7 +43,7 @@ namespace QLTK
             new Server("Vũ trụ 10", "dragon10.teamobi.com", 14445),
             new Server("Vũ trụ 11", "dragon11.teamobi.com", 14445),
             new Server("Võ đài Liên Vũ Trụ", "dragonwar.teamobi.com", 20000),
-            new Server("Universe 1", "dragon.indonaga.com", 14445, 2),
+            new Server("Universe 1", "dragon.indonaga.com", 14445, 1),
             new Server("Indonaga", "dragon.indonaga.com", 14446, 2),
         };
 
@@ -248,14 +249,14 @@ namespace QLTK
         {
             if (!this.UpdateSizeData())
             {
-                MessageBox.Show(LangHelper.GetString("InvalidWindowSize"));
+                MessageBox.Show(Strings.InvalidWindowSize);
                 return;
             }
 
             var accounts = this.GetSelectedAccounts();
             if (accounts.Count() == 0)
             {
-                MessageBox.Show(LangHelper.GetString("SelectAccount"));
+                MessageBox.Show(Strings.SelectAccount);
                 return;
             }
 
@@ -268,7 +269,7 @@ namespace QLTK
         {
             if (!this.UpdateSizeData())
             {
-                MessageBox.Show(LangHelper.GetString("InvalidWindowSize"));
+                MessageBox.Show(Strings.InvalidWindowSize);
                 return;
             }
 
@@ -291,13 +292,13 @@ namespace QLTK
         {
             if (account.process == null || account.process.HasExited)
             {
-                account.status = LangHelper.GetString("StartingUp");
+                account.status = Strings.StartingUp;
                 this.AccountsDataGrid.Items.Refresh();
 
                 AsynchronousSocketListener.waitingAccounts.Add(account);
 
                 account.process = Process.Start(Settings.Default.PathGame,
-                    $"-port {Settings.Default.PortListener} -screen-width {width} -screen-height {height} -screen-fullscreen {FullScreenCheckBox.IsChecked}");
+                    $"-port {Settings.Default.PortListener} -screen-width {width} -screen-height {height} -screen-fullscreen {FullScreenCheckBox.IsChecked} --lang=2");
 
                 while (account.process.MainWindowHandle == IntPtr.Zero)
                 {
@@ -600,7 +601,7 @@ namespace QLTK
 
                 if (!this.UpdateSizeData())
                 {
-                    MessageBox.Show(LangHelper.GetString("InvalidWindowSize"));
+                    MessageBox.Show(Strings.InvalidWindowSize);
                     this.MainGrid.IsEnabled = true;
                     return;
                 }
@@ -632,7 +633,7 @@ namespace QLTK
             var account = this.GetSelectedAccount();
             if (account == null)
             {
-                MessageBox.Show(LangHelper.GetString("SelectAccount"));
+                MessageBox.Show(Strings.SelectAccount);
                 return;
             }
 

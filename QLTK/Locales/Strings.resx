@@ -150,6 +150,9 @@
   <data name="NotLoggedYet" xml:space="preserve">
     <value>Not logged in yet</value>
   </data>
+  <data name="OldVersion" xml:space="preserve">
+    <value>Old version</value>
+  </data>
   <data name="SelectAccount" xml:space="preserve">
     <value>Please select an account</value>
   </data>
